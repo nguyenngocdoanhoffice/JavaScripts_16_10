@@ -1,0 +1,316 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tin Tức</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS nội tuyến để dễ dàng sử dụng */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--light-text-color);
+            padding: 20px 0;
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-bar {
+            text-align: center;
+        }
+
+        .nav-bar a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 700;
+            padding: 10px 15px;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 0;
+        }
+
+        .main-section {
+            flex: 2;
+            min-width: 0;
+            margin-right: 30px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-card {
+            background-color: var(--light-text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-card-content h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .news-card-content p {
+            font-size: 1em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .news-card-content .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        
+        .news-card-content .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar-card {
+            background-color: var(--light-text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-card h4 {
+            margin-top: 0;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--text-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-card ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar-card ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .main-section, .sidebar {
+                margin-right: 0;
+                width: 100%;
+            }
+
+            .main-section {
+                order: 2;
+            }
+
+            .sidebar {
+                order: 1;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Tin tức 24/7</a>
+            <nav class="nav-bar">
+                <a href="#">Trang chủ</a>
+                <a href="#">Xã hội</a>
+                <a href="#">Kinh tế</a>
+                <a href="#">Khoa học</a>
+                <a href="#">Thể thao</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <section class="main-section">
+            <h2 class="section-title">Tin tức mới nhất</h2>
+            
+            <article class="news-card">
+                <img src="https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Ảnh minh họa tin tức">
+                <div class="news-card-content">
+                    <h3>Khám phá công nghệ AI mới giúp dự báo thời tiết chính xác hơn</h3>
+                    <p>Các nhà khoa học vừa công bố một mô hình trí tuệ nhân tạo đột phá, có khả năng phân tích dữ liệu khí tượng phức tạp để đưa ra dự báo chính xác đến từng khu vực nhỏ.</p>
+                    <a href="#" class="read-more">Đọc thêm »</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Ảnh minh họa tin tức">
+                <div class="news-card-content">
+                    <h3>Thị trường chứng khoán toàn cầu tăng điểm mạnh sau báo cáo kinh tế tích cực</h3>
+                    <p>Báo cáo kinh tế mới nhất cho thấy sự phục hồi mạnh mẽ của nhiều ngành công nghiệp, tạo động lực lớn cho các chỉ số chứng khoán trên toàn thế giới.</p>
+                    <a href="#" class="read-more">Đọc thêm »</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Ảnh minh họa tin tức">
+                <div class="news-card-content">
+                    <h3>Giáo dục trực tuyến phát triển mạnh mẽ, mở ra kỷ nguyên học tập mới</h3>
+                    <p>Các nền tảng giáo dục trực tuyến đang ngày càng phổ biến, cung cấp nhiều khóa học đa dạng và linh hoạt, giúp mọi người tiếp cận tri thức dễ dàng hơn.</p>
+                    <a href="#" class="read-more">Đọc thêm »</a>
+                </div>
+            </article>
+
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h4 class="section-title">Tin nổi bật</h4>
+                <ul>
+                    <li><a href="#">Nghiên cứu mới về vaccine thế hệ tiếp theo</a></li>
+                    <li><a href="#">Phát hiện chấn động về vũ trụ</a></li>
+                    <li><a href="#">Khai mạc lễ hội văn hóa truyền thống</a></li>
+                    <li><a href="#">Kết quả vòng đấu thể thao kịch tính</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-card">
+                <h4 class="section-title">Danh mục</h4>
+                <ul>
+                    <li><a href="#">Sự kiện</a></li>
+                    <li><a href="#">Công nghệ</a></li>
+                    <li><a href="#">Du lịch</a></li>
+                    <li><a href="#">Giải trí</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Trang Tin Tức. Bản quyền thuộc về bạn.</p>
+        </div>
+    </footer>
+
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../Yeu_cau/node.js"></script>
+</body>
+>>>>>>> d3d5cda (First commit)
+</html>
